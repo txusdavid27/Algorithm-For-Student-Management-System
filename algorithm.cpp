@@ -1,6 +1,6 @@
-//Proyecto: Entrega final, manejo de información de la U.
-///Por JESÚS TRASLAVIÑA.
-//PUJ, 25/05/2020.
+ï»¿//Project: Final delivery, information management of the U.
+///By JESUS â€‹â€‹TRASLAVIÃ‘A.
+//PUJ, 05/25/2020.
 #include <iostream>
 #include <stdlib.h>
 #define maxe 100
@@ -8,7 +8,7 @@
 using namespace std;
 
 
-///ESTRUCTURAS
+///STRUCTURES
 struct semestre
 {
     char situacion_academica;
@@ -33,8 +33,7 @@ struct estudiante
     semestre semestres[30];
 };
 
-
-///PROTOTIPOS DE FUNCIONES
+///PROTOTYPES OF FUNCTIONS
 
 int buscar_est(long int cedula, int cant_est, estudiante estudiantes[]);
 void lectura (estudiante estudiantes[maxe], int cante, long int cedutemp);
@@ -46,26 +45,26 @@ int max_pruebas(estudiante estudiantes[], int cante);
 void femeni_prueba(estudiante mujer);
 void verifi_exclu(estudiante estudiantes[], int cante);
 void grado(estudiante estudiantes[], int cante);
-///NUEVA FUNCION_SUSTENTACIÓN.
 int infe_tres(estudiante estudiantes[],int  cante, int impresiones[]);
 
-///FUNCIÓN PRINCIPAL
+
+///PRINCIPAL FUNCTION
 int main ()
 {
-    int cante=0,op,opcero=0,indice_buscado;//cante, es la cantidad de estudiante; op, es la opción; opcero, es el centinela que verifica el uso de la opción cero; indice_buscado es el estudiante que se busca.
-    long int cedutemp;// es la cedula temporal para agregar o borrar.
-    char seguro;//centinela de borrar estudiante.
-    estudiante estudiantes[maxe]; //Arreglo de tipo estructura estudiante que guarda la información de cada uno.
-    int impresiones[maxe];// este arreglo almacena los indices de algunas funciones.
-    bool fin=false;//centinela para terminar el programa
-    int cuantos_imprimir;//TAMAÑO DEL ARREGLO IMPRESIONES
-    int indice_mas_pruebas;//la posición en el arreglo, del estudiante ha estado más veces en prueba.
-    cout<<"°°°BASE DE DATOS DE 'LaU'°°(GOMEZ_TRASLAVINA)°°°°"<<endl;
+    int cante=0,op,opcero=0,indice_buscado;//cante, is the amount of student; op, is the option; opcero, is the sentinel that checks the use of option zero; search_index is the student being searched for.
+    long int cedutemp;//is the temporary card to add or delete.
+    char seguro;//delete student sentinel.
+    estudiante estudiantes[maxe]; //Array of type student structure that saves the information of each one.
+    int impresiones[maxe];// this array stores the indices of some functions.
+    bool fin=false;//sentinel to end the program
+    int cuantos_imprimir;//ARRANGEMENT SIZE PRINTS
+    int indice_mas_pruebas;//the position in the arrangement, the student has been more times in test.
+    cout<<"Â°Â°Â°BASE DE DATOS DE 'LaU'Â°Â°(GOMEZ_TRASLAVINA)Â°Â°Â°Â°"<<endl;
     do
     {
         cout<<endl;
-        //Se presenta el menú de opciones
-        cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+        //Se presenta el menÃº de opciones
+        cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
         cout<<"MENU DE OPCIONES--------"<<endl;
         cout<<"______0.________________Introducir Datos Disp|"<<endl;
         cout<<"______1.________________Lista masculina estud|"<<endl;
@@ -80,10 +79,10 @@ int main ()
         cout<<"______10.________________Salir  del   Programa|"<<endl;
         cout<<"# de Opcion: ";
         cin>>op;
-        //system ("cls");//Borrrar pantalla.
+        //system ("cls");//Clear screen.
         if((opcero==0 && op!=0 && op!=9)|| (op!=0 && op!=9 && op!=7 && cante==0))
         {
-            //Condicional para Restringir uso de otras opciones antes de elegir la cero, o cuando no hay estudiantes.
+            //Conditional to Restrict use of other options before choosing zero, or when there are no students.
             cout<<"\nNO HAY ESTUDIANTES!!"<<endl;
             cout<<"SI NO HA UTILIZADO LA OPCION CERO,"<<endl;
             cout<<"UTILICE PRIMERO LA OPCION CERO."<<endl;
@@ -100,7 +99,7 @@ int main ()
                 {
                     cout<<"Cantidad de Estudiantes:"<<endl;
                     cin>>cante;
-                    lectura(estudiantes,cante, cedutemp);//lamado a la función de lectura.
+                    lectura(estudiantes,cante, cedutemp);//called to the reading function.
                     if(cante==0)
                     {
                         cout<<"NO HAY ESTUDIANTES TODAVIA"<<endl;
@@ -113,35 +112,35 @@ int main ()
                 }
                 break;
             case 1:
-                cuantos_imprimir= verifi_sexo(estudiantes,cante, impresiones, 'm');//se llena el arreglo con solo estudiantes masculinos y se obtine la cantidad.
+                cuantos_imprimir= verifi_sexo(estudiantes,cante, impresiones, 'm');//the array is filled with only male studentsand the quantity is obtained
                 cout<<endl;
                 cout<<"Los estudiantes masculinos: "<<endl;
                 for(int i=0; i<cuantos_imprimir; i++)
                 {
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"ESTUDIANTE #"<<impresiones[i]+1<<endl;
                     prese_datos(estudiantes[impresiones[i]]);
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 }
                 cout<<"HAY "<<cuantos_imprimir<<" ESTUDIANTE/S MASCULINO/S"<<endl;
                 cout<<endl;
                 break;
             case 2:
-                cuantos_imprimir= verifi_sexo(estudiantes,cante, impresiones, 'f');//se llena el arreglo con solo estudiantes femeninos y se obtine la cantidad.
+                cuantos_imprimir= verifi_sexo(estudiantes,cante, impresiones, 'f');//the array is filled with only female students and the quantity is obtained.
                 cout<<endl;
                 cout<<"Los estudiantes femeninos: "<<endl;
                 for(int i=0; i<cuantos_imprimir; i++)
                 {
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"ESTUDIANTE #"<<impresiones[i]+1<<endl;
                     prese_datos(estudiantes[impresiones[i]]);
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;;
                 }
                 cout<<"HAY "<<cuantos_imprimir<<" ESTUDIANTE/S FEMENINO/S"<<endl;
                 cout<<endl;
                 break;
             case 3:
-                cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 cout<<"La mayor cantidad de veces en prueba es: <";
                 indice_mas_pruebas=max_pruebas(estudiantes,cante);
                 cout<<">"<<endl;
@@ -150,7 +149,7 @@ int main ()
                     cout<<"CANTIDAD QUE LE PERTENECE AL : ";
                     cout<<"ESTUDIANTE #"<<indice_mas_pruebas+1<<endl;
                     prese_datos(estudiantes[indice_mas_pruebas]);
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"ADVERTENCIA!! SI QUIERE VER LA CANTIDAD"<<endl;
                     cout<<"DE VECES EN PRUEBA, DESLIZAR ARRIBA!!!!"<<endl;
                 }
@@ -165,11 +164,11 @@ int main ()
                 cout<<" Si no se visualizan datos, no existen ..... "<<endl;
                 for(int i=0; i<cuantos_imprimir; i++)
                 {
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     femeni_prueba(estudiantes[impresiones[i]]);
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 }
-                cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 cout<<endl;
                 break;
             case 5:
@@ -180,34 +179,34 @@ int main ()
                 {
                     for(int i=0; i<cuantos_imprimir; i++)
                     {
-                        cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                        cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                         prese_datos(estudiantes[i]);
-                        cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                        cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     }
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<endl;
 
                 }
                 else
                 {
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"NO HAY ESTUDIANTES QUE CUMPLAN CON ESA CONDICION"<<endl;
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 }
                 cout<<"Cantidad de estudiantes que cumplen la condicion: "<<cuantos_imprimir<<endl;
 
                 break;
             case 6:
-                //BORRAR UNO.
+                //DELETE ONE.
                 cout<<"Cedula a borrar: ";
                 cin>>cedutemp;
                 indice_buscado=buscar_est(cedutemp, cante, estudiantes);
                 if(indice_buscado!=-1)
                 {
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"ESTUDIANTE #"<<indice_buscado+1<<endl;
                     prese_datos(estudiantes[indice_buscado]);
-                    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+                    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
                     cout<<"Esta seguro de borrar a <"<<estudiantes[indice_buscado].nombre<<">, Si=s o No=n: ";
                     cin>>seguro;
                     if(seguro=='s')
@@ -246,7 +245,7 @@ int main ()
                 }
                 break;
             case 8:
-                cout<<"ESTUDIANTES A EXCLUIR:°°°°°°°"<<endl;
+                cout<<"ESTUDIANTES A EXCLUIR:Â°Â°Â°Â°Â°Â°Â°"<<endl;
                 verifi_exclu(estudiantes, cante);
                 cout<<endl;
                 break;
@@ -274,18 +273,18 @@ int main ()
                 cout<<"<<<PRESIONE ENTER>>>"<<endl;
                 cin.ignore();
                 cin.get();
-                //Aguardar el reinicio den ciclo.
+                //Wait for the restart of the cycle.
             }
         }
-        //system ("cls");//Borrrar pantalla.
+        //system ("cls");//clear screen.
     }
     while(!fin);
 }
 
 
-///FUNCIONES
+///FUNCTIONS
 /**
-FUNCION DE la opción 5 nueva.
+FEATURE OF option 5 new.
 
 */
 int infe_tres(estudiante estudiantes[],int  cante, int impresiones[])
@@ -311,22 +310,22 @@ int infe_tres(estudiante estudiantes[],int  cante, int impresiones[])
 
 }
 /**
-FUNCION DE LECTURA
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
-    Param [long int] cedutemp: Numero que guarda la cedula nueva y define si es entrada inicial o de un solo estudiante.
-    Post: Se registraron exitosamente los datos de los estudiantes
+READING FUNCTION
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] cante: Current number of students in the system.
+    Param [long int] cedutemp: Number that saves the new cedula and defines if it is an initial entry or a single student.
+    Post: Student data successfully registered
 */
 void lectura (estudiante estudiantes[maxe], int cante, long int cedutemp)
 {
-    //Ingreso de datos masivo en el orden preestablecido.
+    //Massive data entry in the pre-established order.
     int z,repetir;
     repetir=cante;
     if(cedutemp!=-1)
     {
         repetir=1;
     }
-    for(int i=0; i<repetir; i++)//Depende de la opcíon que se haya elegido, lo hace una vez o masivamente.
+    for(int i=0; i<repetir; i++)//Depends on the option that has been chosen, it does it once or massively.
     {
         z=i;
         cout<<endl;
@@ -377,7 +376,7 @@ void lectura (estudiante estudiantes[maxe], int cante, long int cedutemp)
         for(int j=0; j<estudiantes[z].semestres_vistos; j++)
         {
             cout<<"SEMESTRE #"<<j+1<<endl;
-            cout<< "Situación académica (p= prueba)(n=normal) :";
+            cout<< "SituaciÃ³n acadÃ©mica (p= prueba)(n=normal) :";
             cin>>estudiantes[z].semestres[j].situacion_academica;
             cout<< "Promedio semestre : ";
             cin>>estudiantes[z].semestres[j].promedio;
@@ -389,11 +388,11 @@ void lectura (estudiante estudiantes[maxe], int cante, long int cedutemp)
 }
 
 /**
-ESTUDIANTES CON MÁS VECES EN PRUEBA (PARA OPCIÓN 3)
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
-    Retorna: Código (índice en el arreglo) del estudiante con más semestres en prueba académica.
-    Post: Se ha retornado el índice del estudiante con más semestres en prueba académica.
+STUDENTS WITH MORE TIMES ON TEST (FOR OPTION 3)
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] cante: Current number of students in the system.
+    Returns: Code (index in the array) of the student with the most semesters on academic probation.
+    Post: The index of the student with more semesters in academic test has been returned.
 */
 int max_pruebas(estudiante estudiantes[], int cante)
 {
@@ -405,29 +404,29 @@ int max_pruebas(estudiante estudiantes[], int cante)
         {
             if(estudiantes[z].semestres[j].situacion_academica=='p')
             {
-                veces++;//Acumula las veces en prueba que ha estado cada estudiante.
+                veces++;// Accumulates the times in test that each student has been.
             }
         }
-        if(veces > mayor)//Define, cada vez, cual es el mayor.
+        if(veces > mayor)//Define, each time, which is the largest.
         {
             mayor=veces;
-            mejor=z;//es el índice que sobrepaso el valor mayor anterior, de mayor cantidad de veces en prueba
+            mejor=z;// is the index that exceeds the previous largest value, of the greatest number of times in the test
         }
     }
     if(mayor==0)
     {
         mejor=-1;
     }
-    cout<<mayor;//ESCRIBE LA CANTIDAD DE VECES EN PRUEBA, de ese Estudiante.
-    return mejor;//índice.
+    cout<<mayor;//WRITE THE NUMBER OF TIMES ON TEST, of that Student.
+    return mejor;//index.
 
 }
 
 /**
-    VERIFICACIÓN ESTUDIANTE PRUEBA (OPCIÓN 4)
-    Param [estudiante] mujer: Estudiante femenino del que se verificará si ha estado en prueba.
+    STUDENT VERIFICATION TEST (OPTION 4)
+    Param [student] female: Female student who will be checked if she has been on probation.
 
-    Post: Si el estudiante ha estado en prueba, se imprimieron su nombre, cantidad de asignaturas perdidas y los nombres de las asignaturas.
+    Post: If the student has been on a test, their name, number of subjects missed, and the names of the subjects were printed.
 */
 void femeni_prueba(estudiante mujer)
 {
@@ -451,10 +450,10 @@ void femeni_prueba(estudiante mujer)
 }
 
 /**
-PESENTAR DATOS DE UN ESTUDIANTE
-    Param [estudiante] estudiantes: Estudiante del que se van a presentar datos.
+PRESENT DATA OF A STUDENT
+    Param [student] students: Student for whom data is to be presented.
 
-    Post: Se imprimieron los datos completos del estudiante.
+    Post: The complete data of the student was printed.
 */
 void prese_datos(estudiante estudiantes)
 {
@@ -482,19 +481,19 @@ void prese_datos(estudiante estudiantes)
     for(int j=0; j<estudiantes.semestres_vistos; j++)
     {
         cout<<"=>      SEMESTRE #"<<j+1<<endl;
-        cout<< "Situación académica (p= prueba)(n=normal) :"<<estudiantes.semestres[j].situacion_academica<<endl;
+        cout<< "SituaciÃ³n acadÃ©mica (p= prueba)(n=normal) :"<<estudiantes.semestres[j].situacion_academica<<endl;
         cout<< "Promedio semestre                         : "<<estudiantes.semestres[j].promedio<<endl;
         cout<< "Creditos Semestre                         : "<<estudiantes.semestres[j].creditos<<endl;
     }
 }
 
 /**
-ELIMINAR A UN ESTUDIANTE POR ÍNDICE
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] indice_buscado: Índice del estudiante a ser eliminado.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
+DELETE A STUDENT BY INDEX
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] search_index: Index of the student to be deleted.
+    Param [int] cante: Current number of students in the system.
 
-    Post: Se ha eliminado la información del estudiante con el índica indicado en el parámetro, y se han "corrido" hacia atrás a los estudiantes de ese punto en adelante en el arreglo.
+    Post: The information of the student with the index indicated in the parameter has been eliminated, and the students from that point forward in the array have been "moved" backwards.
 */
 void borrar(estudiante estudiantes[], int indice_buscado, int cante)
 {
@@ -506,11 +505,11 @@ void borrar(estudiante estudiantes[], int indice_buscado, int cante)
 
 
 /**
-IMPRIMIR ESTUDIANTES A SER EXCLUIDOS
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
+PRINT STUDENTS TO BE EXCLUDED
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] cante: Current number of students in the system.
 
-    Post: Se imprimió los nombres y PPA de los estudiantes que llevan 10 o más semestres en la universidad (candidatos a grado). Si no hay candidatos aún se imprimió: "NO HAY CANDIDATOS TODAVIA".
+    Post: The names and PPA of the students who have spent 10 or more semesters at the university (degree candidates) were printed. If there are no candidates yet, "NO CANDIDATES YET" was printed.
 */
 void verifi_exclu(estudiante estudiantes[], int cante)
 {
@@ -522,17 +521,17 @@ void verifi_exclu(estudiante estudiantes[], int cante)
         {
             if(estudiantes[i].semestres[j].situacion_academica=='p')
             {
-                veces++;//Debe sumar dos, para que sean los últimos dos semestres en prueba.
+                veces++;//You must add two, so that they are the last two semesters on probation.
             }
         }
-        if((veces==2) && (ppa(estudiantes[i])< 3.4))//imprime, si se cumplen losdos semestres en prueba y su PPA sea menor a 3.4.
+        if((veces==2) && (ppa(estudiantes[i])< 3.4))//prints, if the two semesters have been tested and its PPA is less than 3.4.
         {
-            cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
+            cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
             cout<<"EXCLUIDO: ";
             cout<<"ESTUDIANTE #"<<i+1<<endl;
-            prese_datos(estudiantes[i]);//se llama a la funciín de presentar datos DE ESE ESTUDIANTE.
+            prese_datos(estudiantes[i]);//call the function to present data FROM THAT STUDENT.
             cout<<"SU PROMEDIO PONDERADO ACUMULADO ES: "<<ppa(estudiantes[i])<<endl;
-            cout<<"°°°°°°°°                            °°°°°°°"<<endl;
+            cout<<"Â°Â°Â°Â°Â°Â°Â°Â°                            Â°Â°Â°Â°Â°Â°Â°"<<endl;
             exc++;
         }
         else
@@ -549,42 +548,42 @@ void verifi_exclu(estudiante estudiantes[], int cante)
 }
 
 /**
-PROMEDIO PONDERADO ACUMULADO (PPA)
-    Param[estudiante] est: Estudiante de cuyas notas se calculará el PPA a retornar.
+CUMULATIVE WEIGHTED AVERAGE (PPA)
+    Param[student] est: Student from whose grades the PPA to be returned will be calculated.
 
-    Retorna[float]: Promedio ponderado acumulado del estudiante.
+    Returns[float]: Cumulative weighted average of the student.
 
-    Post: Se ha calculado y retornado el PPA del estudiante pasado por parámetro.
+    Post: The PPA of the student passed by parameter has been calculated and returned.
 */
 float ppa(estudiante est)
 {
     float sum_cred = 0, prom = 0, sum_pond = 0;
     for(int i=0; i<est.semestres_vistos; i++)
     {
-        sum_pond += (est.semestres[i].promedio*est.semestres[i].creditos);//Se acumula el producto entre promedio del semestre y creditos vistos.
-        sum_cred += est.semestres[i].creditos;//se acumulan los creditos vistos.
+        sum_pond += (est.semestres[i].promedio*est.semestres[i].creditos);//The product is accumulated between the average of the semester and credits seen.
+        sum_cred += est.semestres[i].creditos;// the seen credits are accumulated.
 
     }
     if(sum_cred==0)
     {
-        return 0;//Si no suman creditos, para que no haya errores matemáticos, devuelve 0.
+        return 0;//If they do not add credits, so that there are no mathematical errors, it returns 0.
     }
-    prom = sum_pond / sum_cred;//Saca el promedio ponderado Acumulado, dividiendo ambos acumuladores respectivamente.
+    prom = sum_pond / sum_cred;//Get the Cumulative weighted average, dividing both accumulators respectively.
     return prom;
 }
 
 /**
-IMPRIMIR LISTA DE CANDIDATOS A GRADO
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
+PRINT LIST OF CANDIDATES TO DEGREE
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] cante: Current number of students in the system.
 
-    Post: Se imprimió los nombres y PPA de los estudiantes que llevan 10 o más semestres en la universidad (candidatos a grado). Si no hay candidatos aún se imprimió: "NO HAY CANDIDATOS TODAVIA".
+    Post: The names and PPA of the students who have spent 10 or more semesters at the university (degree candidates) were printed. If there are no candidates yet, "NO CANDIDATES YET" was printed.
 */
 void grado(estudiante estudiantes[], int cante)
 {
     int cont=0;
-    cout<<"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°"<<endl;
-    cout<<"°°°°CANDIDATOS A GRADO°°°°°°°"<<endl;
+    cout<<"Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°"<<endl;
+    cout<<"Â°Â°Â°Â°CANDIDATOS A GRADOÂ°Â°Â°Â°Â°Â°Â°"<<endl;
     for(int i=0; i<cante ; i++)
     {
         if(estudiantes[i].semestres_vistos>=10)
@@ -603,14 +602,14 @@ void grado(estudiante estudiantes[], int cante)
 }
 
 /**
-BUSCAR ESTUDIANTE POR CÉDULA
-    Param [long int] cedula: Cédula del estudiante a ser buscado.
-    Param [int] cant_est: Cantidad actual de estudiantes en el sistema.
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
+SEARCH STUDENT BY ID
+    Param [long int] cedula: Student ID to be searched.
+    Param [int] cant_est: Current number of students in the system.
+    Param [student] students[]: Array that contains the information of the students.
 
-    Retorna [int]: Código (índice en el arreglo) del estudiante con la cédula definida, -1 si el estudiante no fue encontrado.
+    Returns [int]: Code (index in the array) of the student with the defined identification card, -1 if the student was not found.
 
-    Post: Se ha retornado el código (índice en el arreglo) del estudiante con la cédula definida, -1 si el estudiante no fue encontrado.
+    Post: The code (index in the array) of the student with the defined identity card has been returned, -1 if the student was not found.
 */
 int buscar_est(long int cedula, int cant_est, estudiante estudiantes[])
 {
@@ -619,32 +618,32 @@ int buscar_est(long int cedula, int cant_est, estudiante estudiantes[])
 
     for(int i=0; (i<cant_est)&& buscar; i++)
     {
-        if(cedula == estudiantes[i].cedula)//compara con todas las cedulas del arreglo, si hay una similar, deja de buscar.
+        if(cedula == estudiantes[i].cedula)//compare with all the cells of the array, if there is a similar one, stop searching.
         {
             buscar = false;
             r = i;
         }
     }
-    return r;//Indice.
+    return r;//Index.
 }
 
 /**
-VERIFICACIÓN DE SEXO DE ESTUDIANTES
-    Param [estudiante] estudiantes[]: Arreglo que contiene la información de los estudiantes.
-    Param [int] cante: Cantidad actual de estudiantes en el sistema.
-    Param [int] impresiones[]: Arreglo en el que se almacenarán los códigos de los estudiantes del sexo definido.
-    Param [char] sexo: 'm' para estudiantes de sexo masculino y 'f' para estudiantes de sexo femenino.
+STUDENT SEX VERIFICATION
+    Param [student] students[]: Array that contains the information of the students.
+    Param [int] cante: Current number of students in the system.
+    Param [int] impressions[]: Array in which the codes of the students of the defined gender will be stored.
+    Param [char] gender: 'm' for male students and 'f' for female students.
 
-    Retorna [int]:cantidad de estudiantes del sexo definido (cantidad de estudiantes a imprimir).
+    Returns [int]: number of students of the defined sex (number of students to print).
 
-    Post: Se han los códigos de los estudiantes del sexo definido en el arreglo impresiones[] y se ha retornado el tamaño del mismo.
+    Post: The codes of the students of the gender defined in the array impressions[] have been found and its size has been returned.
 */
 int verifi_sexo (estudiante estudiantes[], int cante, int impresiones[],char sexo)
 {
     int a=0;
     for(int i=0; i<cante; i++)
     {
-        if(estudiantes[i].sexo==sexo)//verifica si el sexo de ese estudiante corresponde con el sexo requerido.
+        if(estudiantes[i].sexo==sexo)//check if the gender of that student matches the required gender.
         {
             impresiones[a]=i;
             a++;
